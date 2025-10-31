@@ -17,7 +17,10 @@ class AgoraRtcEngine {
       final engine = createAgoraRtcEngine();
       engine.initialize(RtcEngineContext(
         appId: appId,
+        channelProfile: ChannelProfileType.channelProfileCommunication,
       ));
+
+    await  engine.enableAudio();
 
       _instance ??= AgoraRtcEngine._(engine);
     } catch (e) {
