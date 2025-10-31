@@ -395,8 +395,7 @@ class _VideoCallScreenState extends ConsumerState<VideoCallScreen> {
           }
           final user = ref.watch(remoteUser);
           if (user == null) {
-            ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text("Error joining video call")));
+         
             return child!;
           }
           return AgoraVideoView(
