@@ -20,7 +20,8 @@ class AgoraRtcEngine {
         channelProfile: ChannelProfileType.channelProfileCommunication,
       ));
 
-    await  engine.enableAudio();
+      await engine.enableAudio();
+      await engine.setClientRole(role: ClientRoleType.clientRoleBroadcaster);
 
       _instance ??= AgoraRtcEngine._(engine);
     } catch (e) {
